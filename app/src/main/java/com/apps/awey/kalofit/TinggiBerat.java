@@ -29,22 +29,22 @@ public class TinggiBerat extends AppCompatActivity {
 
         final EditText etTinggi = (EditText) findViewById(R.id.TinggiBadan);
         final EditText etBerat = (EditText) findViewById(R.id.BeratBadan);
-        final TextView tvHasil1 = (TextView) findViewById(R.id.tv_hasil1);
-        final TextView tvHasil2 = (TextView) findViewById(R.id.tv_hasil2);
+        //final TextView tvHasil1 = (TextView) findViewById(R.id.tv_hasil1);
+        //final TextView tvHasil2 = (TextView) findViewById(R.id.tv_hasil2);
         Button bHitung = (Button) findViewById(R.id.b_hitung);
-        bHitung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Double tinggi = Double.parseDouble(etTinggi.getText().toString());
-                Double berat  = Double.parseDouble(etBerat.getText().toString());
-                tvHasil1.setText("Kebutuhan kalori Anda ialah "+
-                        hitungBMR(tinggi,berat, usia, aktivitas)+" kkal");
-                tvHasil2.setText("BMI Anda ialah "+
-                        hitungBMI(tinggi,berat)+"");
-//                Toast.makeText(getApplicationContext(),hitungBMI(tinggi, berat) + ""
-//                        ,Toast.LENGTH_SHORT).show();
-            }
-        });
+//        bHitung.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Double tinggi = Double.parseDouble(etTinggi.getText().toString());
+//                Double berat  = Double.parseDouble(etBerat.getText().toString());
+//                tvHasil1.setText("Kebutuhan kalori Anda ialah "+
+//                        hitungBMR(tinggi,berat, usia, aktivitas)+" kkal");
+//                tvHasil2.setText("BMI Anda ialah "+
+//                        hitungBMI(tinggi,berat)+"");
+////                Toast.makeText(getApplicationContext(),hitungBMI(tinggi, berat) + ""
+////                        ,Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 
