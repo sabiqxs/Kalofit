@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.apps.awey.kalofit.MainActivity">
-
+    android:layout_width="match_parent" android:layout_height="match_parent">
     <Button
-        android:id="@+id/b_next"
+        android:id="@+id/b_next2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
@@ -16,45 +11,50 @@
         android:layout_alignParentBottom="true"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jenis Kelamin"
+        android:text="Level Aktivitas Anda"
         android:textSize="20sp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp" />
 
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textView3"
         android:layout_marginTop="10dp"
         >
-        <RadioButton android:id="@+id/r_pria"
+        <RadioButton android:id="@+id/r_taktif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PRIA"
-            android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/r_wanita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WANITA"
+            android:text="Tidak Aktif"
             android:onClick="onRadioButtonClicked"/>
 
-        <android.support.v7.widget.AppCompatTextView
+        <RadioButton android:id="@+id/r_ringan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="10dp"
-            android:text="Usia"/>
+            android:text="Ringan, olahraga 1-3x seminggu"
+            android:onClick="onRadioButtonClicked"/>
 
-        <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/r_usia"
-            android:layout_width="50dp"
+        <RadioButton android:id="@+id/r_sedang"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:inputType="numberDecimal"/>
+            android:text="Sedang, olahraga 3-5x seminggu"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/r_berat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berat, olahraga 5-6x seminggu"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/r_sberat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sangat berat, olahraga 2x sehari dalam sehari atau penuh dengan aktivitas fisik"
+            android:onClick="onRadioButtonClicked"/>
+
     </RadioGroup>
-
 </RelativeLayout>

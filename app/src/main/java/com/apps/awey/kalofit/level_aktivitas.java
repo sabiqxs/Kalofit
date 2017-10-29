@@ -2,35 +2,37 @@ package com.apps.awey.kalofit;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 
-public class MainActivity extends AppCompatActivity {
-    String kelamin;
+/**
+ * Created by sabiqxs on 30/10/2017.
+ */
+
+public class level_aktivitas extends AppCompatActivity {
+    double aktivitas;
     // int usia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Button bnext = (Button)findViewById(R.id.b_next);
-        final EditText etUsia = (EditText) findViewById(R.id.r_usia);
+        setContentView(R.layout.activity_level_aktivitas);
+        Button bnext = (Button)findViewById(R.id.b_next2);
         bnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedPref = getSharedPreferences("file", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("kelamin", kelamin);
-                editor.putInt("usia", Integer.parseInt(etUsia.getText().toString()));
+                editor.putFloat("aktivitas",(float)aktivitas);
                 editor.commit();
-                Intent i = new Intent(getApplicationContext(),level_aktivitas.class);
+                Intent i = new Intent(getApplicationContext(),TinggiBerat.class);
                 startActivity(i);
             }
         });
+
+
     }
 
     public void onRadioButtonClicked(View view) {
@@ -39,13 +41,25 @@ public class MainActivity extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.r_pria:
+            case R.id.r_taktif:
                 if (checked)
-                    kelamin="p";
+                    aktivitas=1.2;
                 break;
-            case R.id.r_wanita:
+            case R.id.r_ringan:
                 if (checked)
-                    kelamin="w";
+                    aktivitas=1.375;
+                break;
+            case R.id.r_sedang:
+                if (checked)
+                    aktivitas=1.55;
+                break;
+            case R.id.r_berat:
+                if (checked)
+                    aktivitas=1.725;
+                break;
+            case R.id.r_sberat:
+                if (checked)
+                    aktivitas=1.9;
                 break;
 
 
